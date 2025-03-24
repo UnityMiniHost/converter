@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@babel/cli": "^7.24.6",
+    "@babel/core": "^7.24.6",
+    "@babel/preset-env": "^7.24.6",
+    "terser": "^5.18.2"
+  },
+  "dependencies": {
+    "esprima": "^4.0.1"
+  }
+}

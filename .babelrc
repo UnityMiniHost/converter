@@ -1,0 +1,5 @@
+{
+  "presets": ["@babel/preset-env"],
+  "sourceType": "unambiguous",
+  "ignore": ["webgl.wasm.framework.unityweb.js"]
+}
