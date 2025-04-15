@@ -110,7 +110,7 @@ def copy_assets(source: Path, target: Path) -> None:
             '.*', '__pycache__', '*.meta', '*.bak'
         ))
     except shutil.Error as e:
-        print(f"❌ Copy error: {str(e)}")
+        print(f"[ERROR] Copy error: {str(e)}")
         sys.exit(1)
 
 def handle_game_config(target_folder: Path) -> Dict:
@@ -232,7 +232,7 @@ def replace_in_js(file_path: Path, old_str: str, new_str: str) -> bool:
             print(f"  - Replaced {count} occurrence(s) of '{old_str}' with '{new_str}'")
             return True
     except Exception as e:
-        print(f"❌ Error processing {file_path}: {str(e)}")
+        print(f"[ERROR] Error processing {file_path}: {str(e)}")
         return False
     
 def prepend_file(file_path: Path, content: str) -> None:
@@ -243,7 +243,7 @@ def prepend_file(file_path: Path, content: str) -> None:
             f.seek(0)
             f.write(f'{content}\n{original_content}')
     except Exception as e:
-        print(f"❌ Error prepending file: {file_path}: {str(e)}")
+        print(f"[ERROR] Error prepending file: {file_path}: {str(e)}")
 
 def handle_wasm_split(target_folder: Path) -> None:
     """Process wasm-split.js for platform compatibility"""
@@ -376,7 +376,7 @@ def process_unity_project(args) -> None:
         print("Packing all files into main package...")
     pack_game(target, config, use_subpackage)
     
-    print("\n✅ Conversion completed successfully!")
+    print("\n[DONE] Conversion completed successfully!")
     print(f"Output directory: {target_parent}")
     # Open output folder in system file explorer
     if sys.platform == "win32":
